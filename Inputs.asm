@@ -10,16 +10,16 @@ nameSpace: .space 60
 
 # prints the text prompt
 la $a0, prompt
-addi $v0, $0, 4
+li $v0, 4
 syscall 
 
 # waits for a user to input some text and writes that to nameSpace
 la $a0, nameSpace
-addi $a1, $0, 60
-addi $v0, $0, 8
+li $a1, 60
+li $v0, 8
 syscall
 
 # prints whatever the user wrote
 la $0, nameSpace
-addi $v0, $0, 4
+li $v0, 4
 syscall
